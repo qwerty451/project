@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Users(models.Model):
+class Player(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
@@ -12,8 +12,8 @@ class Users(models.Model):
     def __str__(self):
         return self.name
 
-class Tasks(models.Model):
-    user = models.ForeignKey(Users, related_name="tasks", on_delete=models.CASCADE)
+class Task(models.Model):
+    player = models.ForeignKey(Player, related_name="task", on_delete=models.CASCADE)
     task = models.CharField(max_length=100)
     description = models.CharField(max_length=100, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -23,5 +23,5 @@ class Tasks(models.Model):
         return self.task
 
 class Buddy(models.Model):
-    user = models.ForeignKey(Users, related_name="buddy", on_delete=models.CASCADE, null=True, blank=True)
-    user2 = models.ForeignKey(Users, related_name="buddy2", on_delete=models.CASCADE, null=True, blank=True)
+    main_player = models.ForeignKey(Player, related_name="main_player", on_delete=models.CASCADE, null=True, blank=True)
+    buddy_player = models.ForeignKey(Player, related_name="buddy_player", on_delete=models.CASCADE, null=True, blank=True)
