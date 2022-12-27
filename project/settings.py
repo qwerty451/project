@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 #ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-ALLOWED_HOSTS = ["seashell-app-ubtbd.ondigitalocean.app"]
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', 'kwerti.nl', 'project.kwerti.nl', 'www.kwerti.nl', 'seashell-app-ubtbd.ondigitalocean.app']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
