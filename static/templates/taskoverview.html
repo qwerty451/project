@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+    <table>
+        <tr>
+            <th>task</th>
+            <th>description</th>
+        </tr>
+        {% for task in official_tasks %}
+            <tr>
+                <td>{{ task.task }}</td>
+                <td>{{ task.description }}</td>
+            </tr>
+        {% endfor %}
+        {% for task in custom_tasks %}
+            <tr>
+                <td>{{ task.task }}</td>
+                <td>{{ task.description }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

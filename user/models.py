@@ -49,8 +49,8 @@ class UserSettings(models.Model):
 
 # Model to store the Buddy for each user. The buddy is another user.
 class Buddy(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    buddy = models.ForeignKey(User, on_delete=models.CASCADE, related_name='buddy')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='main_user')
+    buddy = models.ForeignKey(User, on_delete=models.CASCADE, related_name='main_buddy', blank=True, null=True)
 
     def __str__(self):
         return f'{self.user.username} Buddy'
