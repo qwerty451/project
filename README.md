@@ -1,3 +1,30 @@
+Start developing:
+-source venv/bin/activate
+-export DEVELOPMENT_MODE="True"
+-export DEBUG="True"
+
+Start local web server: 
+?python manage.py makemigrations
+?python manage.py migrate
+-python manage.py runserver
+
+Retrieve code running in live environment:
+-git pull (retrieves code)
+
+Push your code to the live environment
+-git pull (retrieves code)
+-git add . (add all your editted files to the change)
+-git commit -m "GEEF HIER JE VERANDERING EEN NAAM" (Create a change/give it a name)
+-git push (push code to live environment)
+
+
+
+
+
+
+
+
+
 Setup project:
 Update:                 sudo apt-get update
 
